@@ -15,17 +15,11 @@ export function Search(){
 
     return(
         <>
-        <div className="mt-5 input-group">
-        <input
-        type="search"
-        className="form-control"
-        placeholder="Search"
-        aria-label="Search"
-        aria-describedby="search-addon"
-        onChange={handleChange}
-        />
-    
+
+        <div class="mt-5 pt-5 input-group">
+            <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" onChange={handleChange} />
         </div>
+        
 
         <Results results={searchResults} />
 

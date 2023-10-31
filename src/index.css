@@ -13,10 +13,12 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
-
+h1,h2,p,strong{
+  color: #ffffff;
+}
 a {
   font-weight: 500;
-  color: #646cff;
+  color: #ff0000;
   text-decoration: inherit;
 }
 a:hover {
@@ -24,11 +26,8 @@ a:hover {
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+
+  background-color: #242424;
 }
 
 h1 {
@@ -58,7 +57,7 @@ button:focus-visible {
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
-    background-color: #ffffff;
+    /* background-color: #ffffff; */
   }
   a:hover {
     color: #747bff;

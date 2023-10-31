@@ -1,79 +1,31 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export function Results({ results }) {
-    
   return (
     <div>
-      <h2>Résultats de recherche :</h2>
-      <table class="table">
-      <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Film</th>
-            <th scope="col">language</th>
-            <th scope="col">Genres</th>
-            <th scope="col">Image</th>
+      
+      <h2 className="mt-4">Résultats de recherche :</h2>
 
-          </tr>
-        </thead>
-      </table>
-      {results.map((query, index) => (
-        <table key={index} class="table table-bordered">
-        
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>{query.show.name}</td>
-            <td>{query.show.language}</td>
-            <td>{query.show.genres}</td>
-            <img src={query.show.image?.medium} class="card-img-bottom ml-5" alt={query.show.name}></img>
-          </tr>
-         
-        </tbody>
-      </table>
-
-      ))}
+      <div className="container">
+        <div className="row">
+          {results.map((query, index) => (
+            <div className="col-md-4 mb-4" key={index}>
+              <div className="card text-black">
+                <img src={query.show.image?.medium} className="card-img-top" alt={query.show.name} />
+                <div className="card-body">
+                  <h5 className="card-title"><strong> <u>Nom du film :</u></strong> {query.show.name}</h5>
+                  <h5 className="card-title"><strong> <u>Langue :</u></strong> {query.show.language}</h5>
+                  <h5 className="card-title"><strong> <u>Genres :</u></strong> {query.show.genres}</h5>
+                  <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+                  <a className="btn btn-primary"> <Link to={"/show/" + query.show.id} className="nav-link">  Détails</Link></a>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
-  )
+  );
 }
 
-
-
-{/* <div>
-      <h2>Résultats de recherche :</h2>
-      <table class="table">
-      <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Film</th>
-            <th scope="col">language</th>
-            <th scope="col">Genres</th>
-            <th scope="col">Image</th>
-
-          </tr>
-        </thead>
-      </table>
-      {results.map((query, index) => (
-        <table key={index} class="table table-bordered">
-        
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>{query.show.name}</td>
-            <td>{query.show.language}</td>
-            <td>{query.show.genres}</td>
-            <img src={query.show.image?.medium} class="card-img-bottom ml-5" alt={query.show.name}></img>
-          </tr>
-         
-        </tbody>
-      </table>
-
-
-
-
-
-
-       
-
-      ))}
-    </div> */}

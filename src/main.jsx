@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
+import { Show } from './pages/Show.jsx';
 
 import {createBrowserRouter, RouterProvider,} from "react-router-dom";
 
@@ -12,11 +13,11 @@ const router = createBrowserRouter([
   },
   {
     path:'/about',
-    element:<h1>Another page</h1>
+    element:<h1>Ma page About</h1>
   },
   {
     path:'/show/:id', // exemple de route dynamique
-    element: <Show/>
+    element: <Show />
   }
 ]);
 
